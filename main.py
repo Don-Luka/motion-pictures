@@ -23,24 +23,43 @@ class MotionPicture():
         self.views_number += 1
 
 class Movie(MotionPicture):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
+    pass
 
 class Series(MotionPicture):
     def __init__(self, season_nr, episode_nr, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.season_nr = season_nr
         self.episode_nr = episode_nr
+    def __repr__(self) -> str:
+        return f'{self.title} S{self.season_nr:02d}E{self.episode_nr:02d}'
 
+def get_movies():
+    pass
+
+def get_series():
+    pass
+
+def search():
+    pass
+
+def generate_views():
+    pass
+
+def top_titles(number_of, content_type):
+    pass
+
+simpsons  = Series(season_nr=1,episode_nr=1, title='The Simpsons', year = 1994, genre = 'comedy')
+
+print(simpsons)
 
 def main():
-    films = {}
-    films.update({"title": "The Shawshank Redemption", "year": 1994, "genre": "drama"})
+    # films = {}
+    # films.update({"title": "The Shawshank Redemption", "year": 1994, "genre": "drama"})
 
-    print(films['title'])
-    print(type(films))
+    # print(films['title'])
+    # print(type(films))
 
-    film_1 = MotionPicture('The Shawshank Redemption', 1994, 'Drama')
+    film_1 = Movie('The Shawshank Redemption', 1994, 'Drama')
 
     print(film_1.views_number)
     film_1.play()
@@ -49,3 +68,5 @@ def main():
     film_1.play()
     film_1.play()
     print(film_1.views_number)
+    
+main()
